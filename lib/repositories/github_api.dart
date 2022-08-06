@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 
 const baseUrl = "https://api.github.com";
 
-final _random = new Random();
+final _random = Random();
 
 class GitHubApi {
   Future<dynamic> _request(String resource) async {

@@ -11,8 +11,8 @@ class UserListItem extends StatelessWidget {
     return Row(
       children: [
         CircleAvatar(
+          backgroundImage: NetworkImage(user.avatarUrl),
           radius: 60,
-          child: Image.network(user.avatarUrl),
         ),
         Expanded(
           child: Column(

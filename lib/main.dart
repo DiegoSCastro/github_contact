@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Github Contact',
       theme: ThemeData(
         useMaterial3: true,
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.indigo,
       ),
       home: const SplashScreen(),
     );

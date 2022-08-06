@@ -3,6 +3,8 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:github_contact/features/home_screen/components/user_list_item.dart';
 import 'package:github_contact/features/home_screen/home_controller.dart';
 
+import '../../widgets/search_dialog.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -19,31 +21,56 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
   }
 
+  openSearch(BuildContext context) async {
+    final search = await showDialog(
+      context: context,
+      builder: (_) => SearchDialog(currentSearch: ''),
+    );
+    // if (search != null) homeStore!.setSearh(search);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Observer(builder: (_) {
-        switch (controller.state) {
-          case HomePageState.loading:
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-
-          case HomePageState.success:
-            return ListView.builder(
+      appBar: AppBar(
+        title: const Text('Github Contact'),
+        actions: [
+          IconButton(
+              icon: const Icon(Icons.search),
+              onPressed: () {
+                openSearch(context);
+              }),
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        child: Observer(builder: (_) {
+          switch (controller.state) {
+            case HomePageState.loading:
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            case HomePageState.success:
+              return ListView.separated(
                 itemCount: controller.randomUsersList.length,
                 itemBuilder: (context, index) {
                   final user = controller.randomUsersList[index];
-                  debugPrint(user.toString());
                   return UserListItem(user: user);
-                });
+                },
+                separatorBuilder: (BuildContext context, int index) {
+                  return const Divider(
+                    height: 30,
+                  );
+                },
+              );
 
-          case HomePageState.error:
-            return const Center(
-              child: Text('Error'),
-            );
-        }
-      }),
+            case HomePageState.error:
+              return const Center(
+                child: Text('Error'),
+              );
+          }
+        }),
+      ),
     );
   }
 }

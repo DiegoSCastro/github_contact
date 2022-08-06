@@ -7,7 +7,7 @@ part 'home_controller.g.dart';
 
 class HomeController = _HomeController with _$HomeController;
 
-enum HomePageState {
+enum HomeScreenState {
   loading,
   success,
   error,
@@ -15,23 +15,23 @@ enum HomePageState {
 
 abstract class _HomeController with Store {
   @observable
-  HomePageState state = HomePageState.success;
+  HomeScreenState state = HomeScreenState.success;
 
   @computed
-  bool get isLoading => state == HomePageState.loading;
+  bool get isLoading => state == HomeScreenState.loading;
 
   ObservableList randomUsersList = ObservableList<User>();
 
   @action
   void getRandomUsersList() {
-    state = HomePageState.loading;
+    state = HomeScreenState.loading;
     GitHubApi().getRandomUsers().then((usersMap) {
       List usersList = usersFromMapArray(usersMap);
       randomUsersList.addAll(usersList);
     }).catchError((e) {
-      state = HomePageState.error;
+      state = HomeScreenState.error;
     }).whenComplete(() {
-      state = HomePageState.success;
+      state = HomeScreenState.success;
     });
   }
 }

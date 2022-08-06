@@ -42,35 +42,30 @@ class _HomeScreenState extends State<HomeScreen> {
               }),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Observer(builder: (_) {
-          switch (controller.state) {
-            case HomePageState.loading:
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            case HomePageState.success:
-              return ListView.separated(
-                itemCount: controller.randomUsersList.length,
-                itemBuilder: (context, index) {
-                  final user = controller.randomUsersList[index];
-                  return UserListItem(user: user);
-                },
-                separatorBuilder: (BuildContext context, int index) {
-                  return const Divider(
-                    height: 30,
-                  );
-                },
-              );
+      body: Observer(builder: (_) {
+        switch (controller.state) {
+          case HomeScreenState.loading:
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          case HomeScreenState.success:
+            return ListView.separated(
+              itemCount: controller.randomUsersList.length,
+              itemBuilder: (context, index) {
+                final user = controller.randomUsersList[index];
+                return UserListItem(user: user);
+              },
+              separatorBuilder: (BuildContext context, int index) {
+                return const Divider();
+              },
+            );
 
-            case HomePageState.error:
-              return const Center(
-                child: Text('Error'),
-              );
-          }
-        }),
-      ),
+          case HomeScreenState.error:
+            return const Center(
+              child: Text('Error'),
+            );
+        }
+      }),
     );
   }
 }

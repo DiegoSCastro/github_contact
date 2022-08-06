@@ -66,31 +66,6 @@ class User {
     );
   }
 
-  Map<String, dynamic> toMap() {
-    return {
-      'login': login,
-      'id': id,
-      'nodeId': nodeId,
-      'avatarUrl': avatarUrl,
-      'gravatarId': gravatarId,
-      'url': url,
-      'htmlUrl': htmlUrl,
-      'followersUrl': followersUrl,
-      'followingUrl': followingUrl,
-      'gistsUrl': gistsUrl,
-      'starredUrl': starredUrl,
-      'subscriptionsUrl': subscriptionsUrl,
-      'organizationsUrl': organizationsUrl,
-      'reposUrl': reposUrl,
-      'eventsUrl': eventsUrl,
-      'receivedEventsUrl': receivedEventsUrl,
-      'type': type,
-      'siteAdmin': siteAdmin,
-    };
-  }
-
-  String toJson() => json.encode(toMap());
-
   factory User.fromJson(String source) => User.fromMap(json.decode(source));
 
   @override

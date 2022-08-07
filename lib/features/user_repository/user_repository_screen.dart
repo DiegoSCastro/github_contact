@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:github_contact/features/user_repository/components/user_repository_success_layout/user_repository_success_layout.dart';
 import 'package:github_contact/features/user_repository/user_repository_controller.dart';
 
 class UserRepositoryScreen extends StatefulWidget {
@@ -16,6 +17,7 @@ class _UserRepositoryScreenState extends State<UserRepositoryScreen> {
   @override
   void initState() {
     controller = UserRepositoryController();
+    controller.getUserRepositories(widget.userId);
     super.initState();
   }
 
@@ -25,20 +27,26 @@ class _UserRepositoryScreenState extends State<UserRepositoryScreen> {
       appBar: AppBar(
         title: const Text('Repository'),
       ),
-      body: Observer(builder: (_) {
-        switch (controller.state) {
-          case UserRepositoryScreenState.loading:
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          case UserRepositoryScreenState.success:
-            return Column(
-              children: [],
-            );
-          case UserRepositoryScreenState.error:
-            return Text('Error');
-        }
-      }),
+      body: Observer(
+        builder: (_) {
+          switch (controller.state) {
+            case UserRepositoryScreenState.loading:
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            case UserRepositoryScreenState.success:
+              return UserRepositorySuccessLayout(
+                controller: controller,
+              );
+            case UserRepositoryScreenState.error:
+              return const Text('Error');
+            case UserRepositoryScreenState.empty:
+              return const Center(
+                child: Text('No Repository found\nto this user'),
+              );
+          }
+        },
+      ),
     );
   }
 }

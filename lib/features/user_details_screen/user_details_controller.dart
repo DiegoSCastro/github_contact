@@ -28,10 +28,9 @@ abstract class _UserDetailsController with Store {
     state = UserDetailsScreenState.loading;
     GitHubApi().getUserInformation(userLogin).then((userDetailsMap) {
       userDetails = UserDetails.fromMap(userDetailsMap);
+      state = UserDetailsScreenState.success;
     }).catchError((e) {
       state = UserDetailsScreenState.error;
-    }).whenComplete(() {
-      state = UserDetailsScreenState.success;
-    });
+    }).whenComplete(() {});
   }
 }

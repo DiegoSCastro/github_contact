@@ -1,5 +1,8 @@
 import 'dart:convert';
 
+List<UserRepository> userRepositoriesFromMapArray(List<dynamic> arr) =>
+    arr.map((e) => UserRepository.fromMap(e)).toList();
+
 class UserRepository {
   final int id;
   final String name;

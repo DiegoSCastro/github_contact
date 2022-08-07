@@ -33,6 +33,20 @@ mixin _$UserRepositoryController on _UserRepositoryController, Store {
     });
   }
 
+  late final _$_UserRepositoryControllerActionController =
+      ActionController(name: '_UserRepositoryController', context: context);
+
+  @override
+  void getUserRepositories(String userLogin) {
+    final _$actionInfo = _$_UserRepositoryControllerActionController
+        .startAction(name: '_UserRepositoryController.getUserRepositories');
+    try {
+      return super.getUserRepositories(userLogin);
+    } finally {
+      _$_UserRepositoryControllerActionController.endAction(_$actionInfo);
+    }
+  }
+
   @override
   String toString() {
     return '''

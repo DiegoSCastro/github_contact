@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.github_contact">
-   <application
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <application
         android:label="github_contact"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">

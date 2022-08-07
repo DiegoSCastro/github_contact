@@ -38,6 +38,16 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
         backgroundColor: AppColors.primary,
         iconTheme: const IconThemeData(color: Colors.white),
       ),
+      floatingActionButton: FloatingActionButton.large(
+        onPressed: () {},
+        child: const Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Text(
+            'Compare with Contacts',
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
       body: Observer(builder: (_) {
         switch (controller.state) {
           case UserDetailsScreenState.loading:

@@ -27,6 +27,8 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
+	<key>NSContactsUsageDescription</key>
+    <string>Description of why you need the contacts permission.</string>
 	<string>Main</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

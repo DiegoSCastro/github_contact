@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:github_contact/constants/app_colors.dart';
 import 'package:github_contact/features/splash_screen.dart';
 
 void main() {
@@ -11,10 +12,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Github Contact',
       theme: ThemeData(
         useMaterial3: true,
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: AppColors.primary,
+        ),
+        outlinedButtonTheme: OutlinedButtonThemeData(
+          style: OutlinedButton.styleFrom(
+            side: const BorderSide(color: AppColors.white),
+          ),
+        ),
+        brightness: Brightness.light,
       ),
       home: const SplashScreen(),
     );

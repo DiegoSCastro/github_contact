@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:github_contact/features/user_repository/user_repository_controller.dart';
-import 'package:github_contact/models/UserRepository.dart';
+import 'package:github_contact/models/user_repository.dart';
 
 import 'components/repository_list_item.dart';
 

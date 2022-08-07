@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:github_contact/constants/app_colors.dart';
 import 'package:github_contact/constants/app_text_styles.dart';
 import 'package:github_contact/features/contacts_screen/contacts_screen.dart';
 import 'package:github_contact/features/user_details_screen/components/user_details_success_layout/user_details_success_layout.dart';
 import 'package:github_contact/features/user_details_screen/user_details_controller.dart';
+
+import '../../constants/app_colors.dart';
 
 class UserDetailsScreen extends StatefulWidget {
   final String userId;
@@ -56,6 +57,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
               child: Text(
                 'Compare with Contacts',
                 textAlign: TextAlign.center,
+                style: AppTextStyles.bodyTextMediumWhite,
               ),
             ),
           );

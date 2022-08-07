@@ -3,6 +3,7 @@ import 'package:github_contact/features/user_details_screen/components/user_deta
 import 'package:github_contact/features/user_details_screen/components/user_details_success_layout/components/info_list_builder.dart';
 import 'package:github_contact/features/user_details_screen/components/user_details_success_layout/components/user_avatar.dart';
 import 'package:github_contact/features/user_details_screen/user_details_controller.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../constants/app_colors.dart';
 import '../../../../constants/app_text_styles.dart';
@@ -33,6 +34,17 @@ class UserDetailsSuccessLayout extends StatelessWidget {
                   controller.userDetails?.name ?? '',
                   style: AppTextStyles.headLine5White,
                 ),
+                InkWell(
+                    onTap: () async {
+                      final uri = Uri.parse(controller.userDetails?.htmlUrl ?? '');
+                      if (await canLaunchUrl(uri)) {
+                        await launchUrl(uri);
+                      }
+                    },
+                    child: Text(
+                      controller.userDetails?.htmlUrl ?? '',
+                      style: AppTextStyles.bodyTextMediumWhite,
+                    )),
                 FollowRow(userDetails: controller.userDetails),
               ],
             ),

@@ -28,8 +28,11 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (_) => SearchDialog(currentSearch: ''),
     );
     if (search != null) {
-      Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => UserDetailsScreen(userId: search)));
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => UserDetailsScreen(userId: search),
+        ),
+      );
     }
   }
 

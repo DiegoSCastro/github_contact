@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:github_contact/constants/app_text_styles.dart';
 import 'package:github_contact/features/user_details_screen/user_details_screen.dart';
 
 import '../../../models/user.dart';
@@ -19,13 +20,20 @@ class UserListItem extends StatelessWidget {
           children: [
             CircleAvatar(
               backgroundImage: NetworkImage(user.avatarUrl),
-              radius: 45,
+              radius: 25,
             ),
             Expanded(
-              child: Column(
-                children: [
-                  Text(user.login),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '/${user.login}',
+                      style: AppTextStyles.bodyTextMedium,
+                    ),
+                  ],
+                ),
               ),
             )
           ],

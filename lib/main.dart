@@ -24,6 +24,9 @@ class MyApp extends StatelessWidget {
             side: const BorderSide(color: AppColors.white),
           ),
         ),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: AppColors.primary,
+        ),
         brightness: Brightness.light,
       ),
       home: const SplashScreen(),

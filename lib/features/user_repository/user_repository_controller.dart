@@ -1,4 +1,4 @@
-import 'package:github_contact/models/UserRepository.dart';
+import 'package:github_contact/models/user_repository.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../repositories/github_api.dart';

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:github_contact/features/user_repository/user_repository_screen.dart';
 import 'package:github_contact/models/user_details.dart';
 
 import 'follow_item.dart';
@@ -31,7 +32,15 @@ class FollowRow extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: OutlinedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => UserRepositoryScreen(
+                        userId: userDetails?.login ?? ' ',
+                      ),
+                    ),
+                  );
+                },
                 child: FollowItem(
                   label: 'Repositories',
                   count: userDetails?.publicRepos ?? 0,

@@ -19,6 +19,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.primary,
         ),
+        outlinedButtonTheme: OutlinedButtonThemeData(
+          style: OutlinedButton.styleFrom(
+            side: const BorderSide(color: AppColors.white),
+          ),
+        ),
         brightness: Brightness.light,
       ),
       home: const SplashScreen(),

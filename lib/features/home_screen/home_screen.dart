@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:github_contact/features/home_screen/components/user_list_item.dart';
 import 'package:github_contact/features/home_screen/home_controller.dart';
+import 'package:github_contact/features/user_details_screen/user_details_screen.dart';
 
 import '../../widgets/search_dialog.dart';
 
@@ -26,7 +27,10 @@ class _HomeScreenState extends State<HomeScreen> {
       context: context,
       builder: (_) => SearchDialog(currentSearch: ''),
     );
-    // if (search != null) homeStore!.setSearh(search);
+    if (search != null) {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => UserDetailsScreen(userId: search)));
+    }
   }
 
   @override

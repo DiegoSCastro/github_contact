@@ -27,15 +27,16 @@ class FollowRow extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            width: 3,
-            height: 20,
-            color: Colors.white,
-          ),
           Expanded(
-            child: FollowItem(
-              label: 'Repositories',
-              count: userDetails?.publicRepos ?? 0,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: OutlinedButton(
+                onPressed: () {},
+                child: FollowItem(
+                  label: 'Repositories',
+                  count: userDetails?.publicRepos ?? 0,
+                ),
+              ),
             ),
           )
         ],

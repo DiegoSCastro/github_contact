@@ -1,7 +1,6 @@
 import 'package:github_contact/models/user_repository.dart';
+import 'package:github_contact/repositories/github_api.dart';
 import 'package:mobx/mobx.dart';
-
-import '../../repositories/github_api.dart';
 
 part 'user_repository_controller.g.dart';
 

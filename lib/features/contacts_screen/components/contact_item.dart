@@ -38,7 +38,7 @@ class _ContactItemState extends State<ContactItem> {
                     color: Theme.of(context).primaryColorLight,
                     child: snapshot.hasData
                         ? Image.memory(snapshot.data!, gaplessPlayback: true)
-                        : Icon(Icons.person),
+                        : const Icon(Icons.person),
                   ),
                 );
               }),

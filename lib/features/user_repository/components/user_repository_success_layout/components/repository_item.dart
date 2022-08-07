@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../../../constants/app_colors.dart';
+import 'package:github_contact/constants/app_colors.dart';
 
 class RepositoryItem extends StatelessWidget {
   final IconData? icon;

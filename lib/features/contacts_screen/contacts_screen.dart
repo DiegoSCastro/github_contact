@@ -4,9 +4,8 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:github_contact/features/contacts_screen/components/contact_item.dart';
 import 'package:github_contact/features/contacts_screen/contacts_controller.dart';
 import 'package:github_contact/models/user_details.dart';
+import 'package:github_contact/widgets/loading_widget.dart';
 import 'package:permission_handler/permission_handler.dart';
-
-import '../../widgets/loading_widget.dart';
 
 class ContactsScreen extends StatefulWidget {
   final UserDetails userDetails;

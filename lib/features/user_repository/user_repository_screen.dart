@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:github_contact/constants/app_text_styles.dart';
 import 'package:github_contact/features/user_repository/components/user_repository_success_layout/user_repository_success_layout.dart';
 import 'package:github_contact/features/user_repository/user_repository_controller.dart';
-
-import '../../constants/app_text_styles.dart';
-import '../../widgets/loading_widget.dart';
+import 'package:github_contact/widgets/loading_widget.dart';
 
 class UserRepositoryScreen extends StatefulWidget {
   final String userId;

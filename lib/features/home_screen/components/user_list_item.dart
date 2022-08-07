@@ -11,7 +11,7 @@ class UserListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => const UserDetailsScreen(userId: ''),
+        builder: (context) => UserDetailsScreen(userId: user.login),
       )),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8),

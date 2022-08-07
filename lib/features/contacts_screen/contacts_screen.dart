@@ -46,16 +46,26 @@ class _ContactsScreenState extends State<ContactsScreen> {
       appBar: AppBar(
         title: Text(_emptyName ? widget.userDetails.login : widget.userDetails.name),
         bottom: PreferredSize(
-          preferredSize: const Size(0, 70),
+          preferredSize: const Size(0, 90),
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 16),
-            child: ElevatedButton(
-              onPressed: () {
-                _emptyName
-                    ? controller.setContact(widget.userDetails.login)
-                    : controller.setContact(widget.userDetails.name);
-              },
-              child: const Text('Search Contact'),
+            child: Column(
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    _emptyName
+                        ? controller.setContact(widget.userDetails.login)
+                        : controller.setContact(widget.userDetails.name);
+                  },
+                  child: const Text('Search Contact'),
+                ),
+                const SizedBox(height: 8),
+                Observer(builder: (_) {
+                  return Text(controller.search != null
+                      ? 'Similar names in your phone contacts list:'
+                      : '');
+                })
+              ],
             ),
           ),
         ),

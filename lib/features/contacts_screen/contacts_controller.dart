@@ -23,6 +23,7 @@ abstract class _ContactsController with Store {
   String? search;
 
   ObservableList<Contact> contactsList = ObservableList<Contact>();
+
   ObservableList<Contact> get filteredList => ObservableList.of(
         search == null
             ? contactsList

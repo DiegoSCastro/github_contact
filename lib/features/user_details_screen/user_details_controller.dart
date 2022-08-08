@@ -1,7 +1,6 @@
 import 'package:github_contact/models/user_details.dart';
+import 'package:github_contact/repositories/github_api.dart';
 import 'package:mobx/mobx.dart';
-
-import '../../repositories/github_api.dart';
 
 part 'user_details_controller.g.dart';
 
@@ -28,10 +27,9 @@ abstract class _UserDetailsController with Store {
     state = UserDetailsScreenState.loading;
     GitHubApi().getUserInformation(userLogin).then((userDetailsMap) {
       userDetails = UserDetails.fromMap(userDetailsMap);
+      state = UserDetailsScreenState.success;
     }).catchError((e) {
       state = UserDetailsScreenState.error;
-    }).whenComplete(() {
-      state = UserDetailsScreenState.success;
-    });
+    }).whenComplete(() {});
   }
 }

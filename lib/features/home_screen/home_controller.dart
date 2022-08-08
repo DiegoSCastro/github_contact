@@ -28,10 +28,9 @@ abstract class _HomeController with Store {
     GitHubApi().getRandomUsers().then((usersMap) {
       List usersList = usersFromMapArray(usersMap);
       randomUsersList.addAll(usersList);
+      state = HomeScreenState.success;
     }).catchError((e) {
       state = HomeScreenState.error;
-    }).whenComplete(() {
-      state = HomeScreenState.success;
-    });
+    }).whenComplete(() {});
   }
 }

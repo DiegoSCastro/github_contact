@@ -1,16 +1,30 @@
-# github_contact
+# Github API Project
 
-A new Flutter project.
+Interview Project of Diego de Souza Castro.
+
+![github_app](https://user-images.githubusercontent.com/66894278/183316366-60685c22-d693-4f15-97ac-cc18e21e7177.gif)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+The code is adapted for Flutter 3.0.5 null security
 
-A few resources to get you started if this is your first Flutter project:
+## Run App
+To run the app, you must have Flutter 2.0 or higher installed.
+and Dart 2.17.0 or higher.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+open the file and run the command:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+flutter pub get
+
+
+## Run the application in development mode
+
+Open the emulator with the code editor or connect a physical device.
+use command in terminal:
+
+flutter run
+
+## Run the application as user
+
+Install Apk file on an android device:
+https://drive.google.com/file/d/1YRmeZ_60-2tPLDt7h9179DulHfLFhRLM/view?usp=sharing

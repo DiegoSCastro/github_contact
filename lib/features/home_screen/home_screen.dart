@@ -28,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (_) => SearchDialog(currentSearch: ''),
     );
     if (search != null) {
+      // ignore: use_build_context_synchronously
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) => UserDetailsScreen(userId: search),

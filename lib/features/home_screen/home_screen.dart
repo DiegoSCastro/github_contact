@@ -3,6 +3,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:github_contact/features/home_screen/components/user_list_item.dart';
 import 'package:github_contact/features/home_screen/home_controller.dart';
 import 'package:github_contact/features/user_details_screen/user_details_screen.dart';
+import 'package:github_contact/widgets/loading_widget.dart';
 import 'package:github_contact/widgets/search_dialog.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -51,9 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Observer(builder: (_) {
         switch (controller.state) {
           case HomeScreenState.loading:
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
+            return const LoadingWidget();
           case HomeScreenState.success:
             return ListView.separated(
               itemCount: controller.randomUsersList.length,

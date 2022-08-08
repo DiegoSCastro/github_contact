@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:github_contact/constants/app_colors.dart';
-import 'package:github_contact/features/splash_screen.dart';
+import 'package:github_contact/routes/app_router.gr.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Github Contact',
+      routerDelegate: appRouter.delegate(),
+      routeInformationParser: appRouter.defaultRouteParser(),
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
         ),
         brightness: Brightness.light,
       ),
-      home: const SplashScreen(),
+      // home: const SplashScreen(),
     );
   }
 }

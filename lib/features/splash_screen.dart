@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:github_contact/constants/app_colors.dart';
 import 'package:github_contact/constants/app_text_styles.dart';
-import 'package:github_contact/features/home_screen/home_screen.dart';
+
+import '../routes/app_router.gr.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -13,11 +15,9 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 3)).then(
-      (value) => Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
-      ),
-    );
+    Future.delayed(const Duration(seconds: 3))
+        .then((value) => AutoRouter.of(context).push(const HomeRoute()));
+
     super.initState();
   }
 

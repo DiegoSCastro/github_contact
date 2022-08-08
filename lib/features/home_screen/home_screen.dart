@@ -1,8 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:github_contact/features/home_screen/components/user_list_item.dart';
 import 'package:github_contact/features/home_screen/home_controller.dart';
-import 'package:github_contact/features/user_details_screen/user_details_screen.dart';
+import 'package:github_contact/routes/app_router.gr.dart';
 import 'package:github_contact/widgets/loading_widget.dart';
 import 'package:github_contact/widgets/search_dialog.dart';
 
@@ -22,18 +23,14 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
   }
 
-  openSearch(BuildContext context) async {
+  openSearch() async {
     final search = await showDialog(
       context: context,
       builder: (_) => SearchDialog(currentSearch: ''),
     );
     if (search != null) {
       // ignore: use_build_context_synchronously
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => UserDetailsScreen(userId: search),
-        ),
-      );
+      AutoRouter.of(context).push(UserDetailsRoute(userId: search));
     }
   }
 
@@ -46,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
               icon: const Icon(Icons.search),
               onPressed: () {
-                openSearch(context);
+                openSearch();
               }),
         ],
       ),

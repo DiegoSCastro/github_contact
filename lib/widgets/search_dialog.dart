@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 class SearchDialog extends StatelessWidget {
@@ -25,7 +26,7 @@ class SearchDialog extends StatelessWidget {
                 prefixIcon: IconButton(
                   icon: const Icon(Icons.arrow_back),
                   color: Colors.grey[700],
-                  onPressed: Navigator.of(context).pop,
+                  onPressed: AutoRouter.of(context).pop,
                 ),
                 suffixIcon: IconButton(
                   icon: const Icon(Icons.close),
@@ -35,7 +36,7 @@ class SearchDialog extends StatelessWidget {
               ),
               textInputAction: TextInputAction.search,
               onSubmitted: (text) {
-                Navigator.of(context).pop(text);
+                AutoRouter.of(context).pop(text);
               },
               autofocus: true,
             ),

@@ -1,10 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:github_contact/constants/app_colors.dart';
 import 'package:github_contact/constants/app_text_styles.dart';
-import 'package:github_contact/features/contacts_screen/contacts_screen.dart';
 import 'package:github_contact/features/user_details_screen/components/user_details_success_layout/user_details_success_layout.dart';
 import 'package:github_contact/features/user_details_screen/user_details_controller.dart';
+import 'package:github_contact/routes/app_router.gr.dart';
 
 class UserDetailsScreen extends StatefulWidget {
   final String userId;
@@ -43,12 +44,8 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
         if (controller.userDetails != null) {
           return FloatingActionButton.large(
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => ContactsScreen(
-                    userDetails: controller.userDetails!,
-                  ),
-                ),
+              AutoRouter.of(context).push(
+                ContactsRoute(userDetails: controller.userDetails!),
               );
             },
             child: const Padding(

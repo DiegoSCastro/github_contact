@@ -1,6 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:github_contact/features/user_repository/user_repository_screen.dart';
 import 'package:github_contact/models/user_details.dart';
+import 'package:github_contact/routes/app_router.gr.dart';
 
 import 'follow_item.dart';
 
@@ -33,12 +34,8 @@ class FollowRow extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: OutlinedButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => UserRepositoryScreen(
-                        userId: userDetails?.login ?? ' ',
-                      ),
-                    ),
+                  AutoRouter.of(context).push(
+                    UserRepositoryRoute(userId: userDetails?.login ?? ' '),
                   );
                 },
                 child: FollowItem(

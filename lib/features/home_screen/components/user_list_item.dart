@@ -1,7 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:github_contact/constants/app_text_styles.dart';
-import 'package:github_contact/features/user_details_screen/user_details_screen.dart';
+import 'package:github_contact/routes/app_router.gr.dart';
 
 import '../../../models/user.dart';
 
@@ -12,9 +13,9 @@ class UserListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => UserDetailsScreen(userId: user.login),
-      )),
+      onTap: () => AutoRouter.of(context).push(
+        UserDetailsRoute(userId: user.login),
+      ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8),
         child: Row(

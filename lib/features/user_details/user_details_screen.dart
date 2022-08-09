@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:github_contact/constants/app_colors.dart';
 import 'package:github_contact/constants/app_text_styles.dart';
-import 'package:github_contact/features/user_details_screen/components/user_details_success_layout/user_details_success_layout.dart';
-import 'package:github_contact/features/user_details_screen/user_details_controller.dart';
+import 'package:github_contact/features/user_details/user_details_controller.dart';
 import 'package:github_contact/routes/app_router.gr.dart';
+
+import 'components/user_details_success_layout/user_details_success_layout.dart';
 
 class UserDetailsScreen extends StatefulWidget {
   final String userId;

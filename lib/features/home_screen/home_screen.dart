@@ -41,10 +41,17 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('Github Contact'),
         actions: [
           IconButton(
-              icon: const Icon(Icons.search),
-              onPressed: () {
-                openSearch();
-              }),
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              AutoRouter.of(context).push(const SettingsRoute());
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              openSearch();
+            },
+          ),
         ],
       ),
       body: Observer(builder: (_) {

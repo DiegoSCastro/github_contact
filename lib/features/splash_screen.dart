@@ -16,20 +16,31 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3))
-        .then((value) => AutoRouter.of(context).push(const HomeRoute()));
+        .then((value) => AutoRouter.of(context).replace(const HomeRoute()));
 
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: AppColors.primary,
       body: Center(
-        child: Text(
-          'Github\nContacts',
-          textAlign: TextAlign.center,
-          style: AppTextStyles.headline1White,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: const [
+            Padding(
+              padding: EdgeInsets.only(bottom: 36),
+              child: Text(
+                'Github\nContacts',
+                textAlign: TextAlign.center,
+                style: AppTextStyles.headline1White,
+              ),
+            ),
+            CircularProgressIndicator(
+              color: Colors.white,
+            ),
+          ],
         ),
       ),
     );

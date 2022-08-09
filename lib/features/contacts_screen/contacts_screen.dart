@@ -1,5 +1,6 @@
 import 'package:fast_contacts/fast_contacts.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:github_contact/features/contacts_screen/components/contact_item.dart';
 import 'package:github_contact/features/contacts_screen/contacts_controller.dart';
@@ -56,13 +57,12 @@ class _ContactsScreenState extends State<ContactsScreen> {
                         ? controller.setContact(widget.userDetails.login)
                         : controller.setContact(widget.userDetails.name);
                   },
-                  child: const Text('Search Contact'),
+                  child: Text(Locales.string(context, 'search_contact')),
                 ),
                 const SizedBox(height: 8),
                 Observer(builder: (_) {
-                  return Text(controller.search != null
-                      ? 'Similar names in your phone contacts list:'
-                      : '');
+                  return Text(
+                      controller.search != null ? Locales.string(context, 'similar_names') : '');
                 })
               ],
             ),
@@ -84,8 +84,8 @@ class _ContactsScreenState extends State<ContactsScreen> {
                 });
 
           case ContactsScreenState.error:
-            return const Center(
-              child: Text('Error getting contacts'),
+            return Center(
+              child: Text(Locales.string(context, 'error_getting_contacts')),
             );
         }
       }),

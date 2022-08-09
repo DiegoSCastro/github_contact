@@ -1,3 +1,29 @@
+
 {
-  "settings":"הגדרות"
+  "settings":"הגדרות",
+  "github_contact":"אנשי קשר של Github",
+  "github_contacts_splash":"Github\nאנשי קשר של",
+  "error":"שְׁגִיאָה",
+  "repository":"מאגר",
+  "repositories":"מאגרים",
+  "no_repository":"לא נמצא מאגר",
+  "stars":"כוכבים",
+  "forks":"מזלגות",
+  "watchers":"צופים",
+  "issues":"נושאים",
+  "main_language":"שפה עיקרית: ",
+  "profile":"פּרוֹפִיל",
+  "compare_with_contacts":"השווה עם אנשי קשר",
+  "error_getting_data":"שגיאה בקבלת נתוני משתמש",
+  "email":"אימייל",
+  "company":"חֶברָה",
+  "location":"מקום",
+  "site_blog":"אתר / בלוג",
+  "bio":"ביוגרפיה",
+  "twitter_user":"שם משתמש בטוויטר",
+  "followers":"עוקבים",
+  "following":"הבא",
+  "search_contact":"חפש איש קשר",
+  "similar_names":"שמות דומים ברשימת אנשי הקשר שלך:",
+  "error_getting_contacts":"שגיאה בקבלת אנשי קשר"
 }

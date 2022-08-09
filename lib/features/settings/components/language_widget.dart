@@ -2,30 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter_locales/flutter_locales.dart';
 import 'package:github_contact/constants/app_assets.dart';
 
+import 'language_item.dart';
+
 class LanguageWidget extends StatelessWidget {
   const LanguageWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        IconButton(
+        LanguageItem(
           onPressed: () {
             LocaleNotifier.of(context)?.change('en');
           },
-          icon: Image.asset(AppAssets.enUs),
+          assetImage: AppAssets.enUs,
+          language: 'English',
         ),
-        IconButton(
+        LanguageItem(
           onPressed: () {
             LocaleNotifier.of(context)?.change('pt');
           },
-          icon: Image.asset(AppAssets.ptBr),
+          assetImage: AppAssets.ptBr,
+          language: 'Português',
         ),
-        IconButton(
+        LanguageItem(
           onPressed: () {
             LocaleNotifier.of(context)?.change('he');
           },
-          icon: Image.asset(AppAssets.heIL),
+          assetImage: AppAssets.heIL,
+          language: 'עברית',
         ),
       ],
     );

@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 import 'package:github_contact/constants/app_colors.dart';
 import 'package:github_contact/constants/app_text_styles.dart';
 
@@ -28,16 +29,16 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          children: const [
+          children: [
             Padding(
-              padding: EdgeInsets.only(bottom: 36),
+              padding: const EdgeInsets.only(bottom: 36),
               child: Text(
-                'Github\nContacts',
+                Locales.string(context, 'github_contacts_splash'),
                 textAlign: TextAlign.center,
                 style: AppTextStyles.headline1White,
               ),
             ),
-            CircularProgressIndicator(
+            const CircularProgressIndicator(
               color: Colors.white,
             ),
           ],

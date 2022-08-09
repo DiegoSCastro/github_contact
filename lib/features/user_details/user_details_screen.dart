@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:github_contact/constants/app_colors.dart';
 import 'package:github_contact/constants/app_text_styles.dart';
@@ -33,8 +34,8 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Profile',
+        title: Text(
+          Locales.string(context, 'profile'),
           style: AppTextStyles.appBarWhite,
         ),
         centerTitle: true,
@@ -49,10 +50,10 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                 ContactsRoute(userDetails: controller.userDetails!),
               );
             },
-            child: const Padding(
-              padding: EdgeInsets.all(16.0),
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
               child: Text(
-                'Compare with Contacts',
+                Locales.string(context, 'compare_with_contacts'),
                 textAlign: TextAlign.center,
                 style: AppTextStyles.bodyTextMediumWhite,
               ),
@@ -71,7 +72,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
           case UserDetailsScreenState.error:
             return Center(
               child: Text(
-                'error getting\nuser data ',
+                Locales.string(context, 'error_getting_data'),
                 textAlign: TextAlign.center,
                 style: AppTextStyles.headLine5White.copyWith(color: Colors.red),
               ),

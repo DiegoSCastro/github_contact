@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 import 'package:github_contact/models/user_details.dart';
 import 'package:github_contact/routes/app_router.gr.dart';
 
@@ -19,11 +20,11 @@ class FollowRow extends StatelessWidget {
             child: Column(
               children: [
                 FollowItem(
-                  label: 'Followers',
+                  label: Locales.string(context, 'followers'),
                   count: userDetails?.followers ?? 0,
                 ),
                 FollowItem(
-                  label: 'Following',
+                  label: Locales.string(context, 'following'),
                   count: userDetails?.following ?? 0,
                 ),
               ],
@@ -39,7 +40,7 @@ class FollowRow extends StatelessWidget {
                   );
                 },
                 child: FollowItem(
-                  label: 'Repositories',
+                  label: Locales.string(context, 'repositories'),
                   count: userDetails?.publicRepos ?? 0,
                 ),
               ),

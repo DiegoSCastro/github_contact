@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:github_contact/features/home_screen/components/user_list_item.dart';
 import 'package:github_contact/features/home_screen/home_controller.dart';
@@ -38,13 +39,20 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Github Contact'),
+        title: Text(Locales.string(context, 'github_contact')),
         actions: [
           IconButton(
-              icon: const Icon(Icons.search),
-              onPressed: () {
-                openSearch();
-              }),
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              AutoRouter.of(context).push(const SettingsRoute());
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              openSearch();
+            },
+          ),
         ],
       ),
       body: Observer(builder: (_) {
@@ -64,8 +72,8 @@ class _HomeScreenState extends State<HomeScreen> {
             );
 
           case HomeScreenState.error:
-            return const Center(
-              child: Text('Error'),
+            return Center(
+              child: Text(Locales.string(context, 'error')),
             );
         }
       }),

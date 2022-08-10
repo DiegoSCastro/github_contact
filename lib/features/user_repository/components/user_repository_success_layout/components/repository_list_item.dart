@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_contact/constants/app_colors.dart';
 import 'package:github_contact/constants/app_text_styles.dart';
@@ -66,22 +67,22 @@ class RepositoryListItem extends StatelessWidget {
                     children: [
                       RepositoryItem(
                         icon: Icons.star_border,
-                        label: 'Stars',
+                        label: Locales.string(context, 'stars'),
                         value: userRepository.stargazersCount.toString(),
                       ),
                       RepositoryItem(
                         icon: FontAwesomeIcons.codeFork,
-                        label: 'forks',
+                        label: Locales.string(context, 'forks'),
                         value: userRepository.forks.toString(),
                       ),
                       RepositoryItem(
                         icon: FontAwesomeIcons.eye,
-                        label: 'Watchers',
+                        label: Locales.string(context, 'watchers'),
                         value: userRepository.watchersCount.toString(),
                       ),
                       RepositoryItem(
                         icon: FontAwesomeIcons.bullseye,
-                        label: 'Issues',
+                        label: Locales.string(context, 'issues'),
                         value: userRepository.openIssues.toString(),
                       )
                     ],
@@ -98,7 +99,7 @@ class RepositoryListItem extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(bottom: 8),
                       child: Text(
-                        'Main Language: ${userRepository.language}',
+                        '${Locales.string(context, 'main_language')} ${userRepository.language}',
                       ),
                     ),
                   if (userRepository.description.isNotEmpty)

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_locales/flutter_locales.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:github_contact/constants/app_text_styles.dart';
 import 'package:github_contact/features/user_repository/components/user_repository_success_layout/user_repository_success_layout.dart';
@@ -27,7 +28,7 @@ class _UserRepositoryScreenState extends State<UserRepositoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Repository'),
+        title: Text(Locales.string(context, 'repository')),
       ),
       body: Observer(
         builder: (_) {
@@ -37,11 +38,11 @@ class _UserRepositoryScreenState extends State<UserRepositoryScreen> {
             case UserRepositoryScreenState.success:
               return UserRepositorySuccessLayout(controller: controller);
             case UserRepositoryScreenState.error:
-              return const Text('Error');
+              return Text(Locales.string(context, 'error'));
             case UserRepositoryScreenState.empty:
               return Center(
                 child: Text(
-                  'No Repository found\nto this user',
+                  Locales.string(context, 'no_repository'),
                   style: AppTextStyles.headLine5White.copyWith(color: Colors.red),
                 ),
               );

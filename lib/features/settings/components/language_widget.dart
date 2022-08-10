@@ -17,7 +17,7 @@ class LanguageWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16),
           child: Text(
-            'Languages',
+            Locales.string(context, 'languages'),
             style: AppTextStyles.headLine5White.copyWith(color: AppColors.darkGray),
           ),
         ),

@@ -25,5 +25,6 @@
   "search_contact":"Buscar Contato",
   "similar_names":"Nomes similares na sua lista de contatos:",
   "error_getting_contacts":"Erro ao conseguir contatos",
-  "auto_refresh":"Atualização automática"
+  "auto_refresh":"Atualização automática",
+  "languages":"Idiomas"
 }

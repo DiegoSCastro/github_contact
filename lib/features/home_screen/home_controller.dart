@@ -25,6 +25,7 @@ abstract class _HomeController with Store {
   @action
   void getRandomUsersList() {
     state = HomeScreenState.loading;
+    randomUsersList.clear();
     GitHubApi().getRandomUsers().then((usersMap) {
       List usersList = usersFromMapArray(usersMap);
       randomUsersList.addAll(usersList);

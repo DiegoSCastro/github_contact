@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_locales/flutter_locales.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:github_contact/features/home_screen/components/timer_switch.dart';
 import 'package:github_contact/features/home_screen/components/user_list_item.dart';
 import 'package:github_contact/features/home_screen/home_controller.dart';
 import 'package:github_contact/routes/app_router.gr.dart';
@@ -54,6 +55,12 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           ),
         ],
+        bottom: PreferredSize(
+          preferredSize: const Size(60, 60),
+          child: TimerSwitch(
+            onRefreshTimer: controller.getRandomUsersList,
+          ),
+        ),
       ),
       body: Observer(builder: (_) {
         switch (controller.state) {

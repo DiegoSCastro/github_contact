@@ -25,5 +25,6 @@
   "following":"הבא",
   "search_contact":"חפש איש קשר",
   "similar_names":"שמות דומים ברשימת אנשי הקשר שלך:",
-  "error_getting_contacts":"שגיאה בקבלת אנשי קשר"
+  "error_getting_contacts":"שגיאה בקבלת אנשי קשר",
+  "auto_refresh":"עדכון אוטומטי"
 }

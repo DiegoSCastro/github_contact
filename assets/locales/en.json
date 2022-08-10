@@ -24,5 +24,6 @@
   "following":"Following",
   "search_contact":"Search Contact",
   "similar_names":"Similar names in your contacts list:",
-  "error_getting_contacts":"Error getting contacts"
+  "error_getting_contacts":"Error getting contacts",
+  "auto_refresh":"Auto refresh"
 }

@@ -19,8 +19,8 @@ class User {
     return User(
       login: map['login'] ?? '',
       id: map['id']?.toInt() ?? 0,
-      avatarUrl: map['avatarUrl'] ?? '',
-      htmlUrl: map['htmlUrl'] ?? '',
+      avatarUrl: map['avatar_url'] ?? '',
+      htmlUrl: map['html_rl'] ?? '',
     );
   }
 

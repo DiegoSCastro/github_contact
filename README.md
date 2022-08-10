@@ -6,7 +6,7 @@ Interview Project of Diego de Souza Castro.
 
 ## Getting Started
 
-The code is adapted for Flutter 3.0.5 null security
+The code is adapted for Flutter 3.0.5 null safety
 
 ## Run App
 To run the app, you must have Flutter 2.0 or higher installed.

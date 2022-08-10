@@ -27,4 +27,4 @@ flutter run
 ## Run the application as user
 
 Install Apk file on an android device:
-https://drive.google.com/file/d/1YRmeZ_60-2tPLDt7h9179DulHfLFhRLM/view?usp=sharing
+https://drive.google.com/file/d/1dUwSO2KnXVqsdGB8PnVLJZRVhaD3l0LL/view?usp=sharing

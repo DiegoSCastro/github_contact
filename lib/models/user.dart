@@ -20,9 +20,30 @@ class User {
       login: map['login'] ?? '',
       id: map['id']?.toInt() ?? 0,
       avatarUrl: map['avatar_url'] ?? '',
-      htmlUrl: map['html_url'] ?? '',
+      htmlUrl: map['html_rl'] ?? '',
     );
   }
 
   factory User.fromJson(String source) => User.fromMap(json.decode(source));
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is User &&
+        other.id == id &&
+        other.login == login &&
+        other.avatarUrl == avatarUrl &&
+        other.htmlUrl == htmlUrl;
+  }
+
+  @override
+  int get hashCode {
+    return id.hashCode ^ login.hashCode ^ avatarUrl.hashCode ^ htmlUrl.hashCode;
+  }
+
+  @override
+  String toString() {
+    return 'User(id: $id, login: $login, avatarUrl: $avatarUrl, htmlUrl: $htmlUrl)';
+  }
 }
